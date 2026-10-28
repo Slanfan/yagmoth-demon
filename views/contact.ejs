@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+<section class="section narrow">
+  <h1>Contact</h1>
+  <p>Questions, collabs, or just want to say hello? Write below or email <a href="mailto:<%= site.email %>"><%= site.email %></a>.</p>
+  <% if (formsEnabled) { %>
+  <%- include('partials/errors') %>
+  <form method="post" action="/contact">
+    <label>Name <input name="name" required maxlength="100" value="<%= values.name || '' %>"></label>
+    <label>Email <input type="email" name="email" required maxlength="200" value="<%= values.email || '' %>"></label>
+    <label>Subject <input name="subject" maxlength="120" value="<%= values.subject || '' %>"></label>
+    <label>Message <textarea name="message" rows="7" required maxlength="4000"><%= values.message || '' %></textarea></label>
+    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn" type="submit">Send</button>
+  </form>
+  <% } else { %>
+    <p class="notice">The online form is not live yet (static preview). Please email <a href="mailto:<%= site.email %>"><%= site.email %></a> instead.</p>
+  <% } %>
+  <ul class="socials inline">
+    <% site.socials.forEach(s => { %><li><a href="<%= s.url %>" target="_blank" rel="noopener me"><%= s.label %></a></li><% }) %>
+  </ul>
+</section>
+<%- include('partials/footer') %>

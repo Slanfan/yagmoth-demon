@@ -1,0 +1,6 @@
+[
+  { "slug": "alter-example", "name": "Original Alter – Example", "category": "Alters", "price": 150, "currency": "USD", "status": "available", "description": "One-of-a-kind hand-painted alter. Replace with a real piece.", "image": null, "buyUrl": null },
+  { "slug": "print-example", "name": "Art Print – Example", "category": "Prints", "price": 25, "currency": "USD", "status": "available", "description": "Archival print, signed and numbered.", "image": null, "buyUrl": null },
+  { "slug": "shirt-example", "name": "Black Tee – Example", "category": "Apparel", "price": 35, "currency": "USD", "status": "soon", "description": "Heavyweight black tee. Coming soon.", "image": null, "buyUrl": null },
+  { "slug": "sleeves-example", "name": "Sleeves / Playmat – Example", "category": "Swag", "price": 30, "currency": "USD", "status": "sold-out", "description": "Limited run – sold out.", "image": null, "buyUrl": null }
+]

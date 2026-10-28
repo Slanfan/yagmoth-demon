@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+<section class="section">
+  <h1>Shop</h1>
+  <p class="muted">Payments are not wired up yet – hit "Inquire" and I'll send an invoice, or the buy link once it's live.</p>
+  <% categories.forEach(cat => { %>
+    <h2><%= cat %></h2>
+    <div class="grid">
+      <% products.filter(p => p.category === cat).forEach(p => { %>
+        <article class="product <%= p.status %>">
+          <img src="<%= p.image || '/img/placeholder.svg' %>" alt="<%= p.name %>" loading="lazy">
+          <h3><%= p.name %></h3>
+          <p><%= p.description %></p>
+          <p class="price"><%= new Intl.NumberFormat('en-US', { style: 'currency', currency: p.currency }).format(p.price) %></p>
+          <% if (p.status === 'available' && p.buyUrl) { %>
+            <a class="btn" href="<%= p.buyUrl %>" target="_blank" rel="noopener">Buy</a>
+          <% } else if (p.status === 'available') { %>
+            <a class="btn" href="/contact?subject=<%= encodeURIComponent('Inquiry: ' + p.name) %>">Inquire</a>
+          <% } else if (p.status === 'soon') { %>
+            <span class="tag">Coming soon</span>
+          <% } else { %>
+            <span class="tag">Sold out</span>
+          <% } %>
+        </article>
+      <% }) %>
+    </div>
+  <% }) %>
+</section>
+<%- include('partials/footer') %>

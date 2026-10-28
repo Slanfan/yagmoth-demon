@@ -1,0 +1,17 @@
+{
+  "name": "Yagmoth Demon",
+  "tagline": "Altered cards forged in blood & black ink",
+  "about": [
+    "Yagmoth Demon is an artist working in the dark corners of Magic: The Gathering – extending, repainting and reimagining cards until they look like they crawled out of the Swamp themselves.",
+    "The name comes from the Old School legend Yawgmoth Demon: a six-mana, first-strike, flying nightmare that demands a heavy price. The work follows the same rule – nothing here is made cheaply.",
+    "Alters are hand-painted on real cards, sealed and shipped protected. Swag is produced in small, numbered runs."
+  ],
+  "email": "hello@example.com",
+  "socials": [
+    { "label": "Instagram", "url": "https://instagram.com/" },
+    { "label": "Twitter / X", "url": "https://x.com/" },
+    { "label": "Bluesky", "url": "https://bsky.app/" },
+    { "label": "Discord", "url": "https://discord.com/" }
+  ],
+  "commissionsOpen": true
+}

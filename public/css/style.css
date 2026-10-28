@@ -1,0 +1,92 @@
+:root {
+  --bg: #0b0708; --panel: #150c0e; --blood: #a3121a; --blood-hi: #d11a25;
+  --bone: #e8dfc8; --muted: #8f8573; --gold: #8a7a5a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--bone);
+  font-family: 'Crimson Text', Georgia, serif; font-size: 1.15rem; line-height: 1.6;
+}
+/* Fixed backdrop (pseudo-element, since background-attachment: fixed is ignored on iOS) */
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: -1;
+  background:
+    linear-gradient(to bottom, rgba(11,7,8,.55), rgba(11,7,8,.75)),
+    radial-gradient(ellipse at center, transparent 40%, rgba(11,7,8,.7) 100%),
+    url('/img/Infernal%20Bone%20King%20Over%20the%20Ruins.png') center / cover no-repeat;
+}
+h1, h2, h3, .brand { font-family: 'Pirata One', 'Times New Roman', serif; font-weight: 400; letter-spacing: .04em; }
+h1 { font-size: clamp(2.4rem, 7vw, 4.5rem); margin: 0 0 .5rem; }
+h2 { font-size: 2rem; color: var(--blood-hi); margin-top: 2.5rem; }
+a { color: #ff5a63; text-decoration: none; }
+a:hover { color: var(--bone); text-shadow: 0 0 10px var(--blood-hi); }
+.muted { color: var(--muted); }
+.center { text-align: center; }
+
+.site-header {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  padding: .75rem 1.5rem; border-bottom: 1px solid var(--blood); background: rgba(11,7,8,.85); backdrop-filter: blur(6px);
+  position: sticky; top: 0; z-index: 10;
+}
+.brand { font-size: 1.9rem; text-decoration: none; color: var(--bone); }
+nav a {
+  font-family: 'Pirata One', serif; font-size: 1.5rem; letter-spacing: .05em;
+  color: var(--bone); margin-left: 1.75rem; padding: .25rem 0; border-bottom: 2px solid transparent;
+}
+nav a:hover, nav a[aria-current] { color: #fff; border-color: var(--blood-hi); text-shadow: 0 0 12px var(--blood-hi); }
+.nav-toggle { display: none; background: none; border: 1px solid var(--blood); color: var(--bone); font-size: 1.4rem; padding: .1rem .6rem; }
+
+main { min-height: 70vh; }
+.section { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+.narrow { max-width: 680px; }
+.hero { text-align: center; padding: 6rem 1.5rem 4rem; }
+.hero h1 { text-shadow: 0 0 30px rgba(209,26,37,.5); font-size: clamp(3rem, 11vw, 7rem); }
+.eyebrow { font-family: 'Cinzel', serif; text-transform: uppercase; letter-spacing: .3em; color: var(--gold); font-size: .85rem; }
+.lead { font-style: italic; font-size: 1.4rem; color: var(--muted); }
+.cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+
+.btn {
+  display: inline-block; font-family: 'Cinzel', serif; text-transform: uppercase; letter-spacing: .12em; font-size: .85rem;
+  background: var(--blood); color: var(--bone); border: 1px solid var(--blood); padding: .7rem 1.5rem;
+  text-decoration: none; cursor: pointer;
+}
+.btn:hover { background: var(--blood-hi); color: #fff; }
+.btn.ghost { background: transparent; }
+.btn.ghost:hover { background: var(--blood); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.75rem; }
+.work, .product { margin: 0; background: rgba(21,12,14,.88); border: 1px solid #2b1a1d; padding: .75rem; transition: border-color .2s, transform .2s; }
+.work:hover, .product:hover { border-color: var(--blood); transform: translateY(-3px); }
+.work img, .product img { width: 100%; aspect-ratio: 5 / 7; object-fit: cover; display: block; background: #000; }
+figcaption span { display: block; font-size: .95rem; }
+.product h3 { margin: .75rem 0 .25rem; font-size: 1.5rem; }
+.product p { margin: .25rem 0; }
+.price { font-family: 'Cinzel', serif; color: var(--gold); }
+.product.sold-out img, .product.soon img { filter: grayscale(.8) brightness(.7); }
+.tag { font-family: 'Cinzel', serif; text-transform: uppercase; font-size: .8rem; letter-spacing: .12em; color: var(--muted); border: 1px solid var(--muted); padding: .3rem .8rem; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+
+form { display: grid; gap: 1.1rem; margin: 1.5rem 0; }
+label { display: grid; gap: .3rem; font-family: 'Cinzel', serif; font-size: .9rem; letter-spacing: .05em; }
+input, textarea, select {
+  font: inherit; font-family: 'Crimson Text', serif; background: #000; color: var(--bone);
+  border: 1px solid #3a2226; padding: .6rem .75rem; width: 100%;
+}
+input:focus, textarea:focus, select:focus { outline: 2px solid var(--blood); border-color: var(--blood); }
+.hp { position: absolute; left: -9999px; height: 0; width: 0; opacity: 0; }
+.errors { border: 1px solid var(--blood); background: #2a0709; padding: .75rem 1.5rem; }
+.notice { border-left: 3px solid var(--gold); padding-left: 1rem; color: var(--gold); }
+
+.site-footer { text-align: center; padding: 3rem 1.5rem; border-top: 1px solid var(--blood); color: var(--muted); font-size: .9rem; }
+.sigil { color: var(--blood); font-size: 2rem; }
+.socials { list-style: none; padding: 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+.socials a { font-family: 'Pirata One', serif; letter-spacing: .05em; font-size: 1.35rem; color: var(--bone); }
+.socials a:hover { color: #fff; }
+
+@media (max-width: 720px) {
+  .nav-toggle { display: block; }
+  nav { display: none; width: 100%; flex-direction: column; padding-top: .5rem; }
+  nav.open { display: flex; }
+  nav a { margin: 0; padding: .6rem 0; }
+  .split { grid-template-columns: 1fr; gap: 1rem; }
+}

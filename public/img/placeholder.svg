@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420">
+<defs><radialGradient id="g" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#5a0a10"/><stop offset="1" stop-color="#0b0708"/></radialGradient></defs>
+<rect width="300" height="420" fill="url(#g)"/>
+<rect x="10" y="10" width="280" height="400" fill="none" stroke="#8a7a5a" stroke-width="2"/>
+<path d="M150 90 L175 170 L260 170 L190 215 L215 295 L150 245 L85 295 L110 215 L40 170 L125 170Z" fill="none" stroke="#a3121a" stroke-width="3"/>
+<circle cx="150" cy="195" r="95" fill="none" stroke="#8a7a5a" stroke-width="2"/>
+<text x="150" y="365" font-family="serif" font-size="18" text-anchor="middle" fill="#8a7a5a" letter-spacing="3">ART COMING SOON</text>
+</svg>

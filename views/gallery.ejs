@@ -1,0 +1,6 @@
+<%- include('partials/header') %>
+<section class="section">
+  <h1>Gallery</h1>
+  <div class="grid"><% works.forEach(w => { %><%- include('partials/work', { w }) %><% }) %></div>
+</section>
+<%- include('partials/footer') %>

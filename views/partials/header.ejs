@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title ? title + ' · ' : '' %><%= site.name %></title>
+  <meta name="description" content="<%= site.name %> – <%= site.tagline %>. Altered Magic: The Gathering cards, prints and swag.">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Pirata+One&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="/"><%= site.name %></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav">☰</button>
+  <nav id="nav">
+    <% [['/gallery','Gallery'],['/shop','Shop'],['/commissions','Commissions'],['/about','About'],['/contact','Contact']].forEach(([href, label]) => { %>
+      <a href="<%= href %>" <%- path === href ? 'aria-current="page"' : '' %>><%= label %></a>
+    <% }) %>
+  </nav>
+</header>
+<main>

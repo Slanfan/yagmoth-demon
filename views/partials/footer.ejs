@@ -1,0 +1,11 @@
+</main>
+<footer class="site-footer">
+  <div class="sigil" aria-hidden="true">⛧</div>
+  <ul class="socials">
+    <% site.socials.forEach(s => { %><li><a href="<%= s.url %>" target="_blank" rel="noopener me"><%= s.label %></a></li><% }) %>
+  </ul>
+  <p>&copy; <%= new Date().getFullYear() %> <%= site.name %>. Magic: The Gathering is property of Wizards of the Coast; altered cards are fan art and unaffiliated.</p>
+</footer>
+<script src="/js/main.js"></script>
+</body>
+</html>

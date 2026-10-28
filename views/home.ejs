@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+<section class="hero">
+  <p class="eyebrow">Altered art · Old School soul</p>
+  <h1><%= site.name %></h1>
+  <p class="lead"><%= site.tagline %></p>
+  <div class="cta">
+    <a class="btn" href="/gallery">Enter the Gallery</a>
+    <a class="btn ghost" href="/commissions">Commission an Alter</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Recent Works</h2>
+  <div class="grid"><% featured.forEach(w => { %><%- include('partials/work', { w }) %><% }) %></div>
+  <p class="center"><a href="/gallery">See all works →</a></p>
+</section>
+
+<section class="section split">
+  <div>
+    <h2>The Shop</h2>
+    <p>Original alters, prints and swag in small runs. When it's gone, it's gone.</p>
+    <a class="btn ghost" href="/shop">Browse the Shop</a>
+  </div>
+  <div>
+    <h2>Commissions <%= site.commissionsOpen ? 'Open' : 'Closed' %></h2>
+    <p>Send in your cards, or tell me what you're after. Fill out the questionnaire and I'll be in touch.</p>
+    <a class="btn ghost" href="/commissions">Start the Questionnaire</a>
+  </div>
+</section>
+<%- include('partials/footer') %>

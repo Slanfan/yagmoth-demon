@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+<section class="section narrow">
+  <h1>Commission an Alter</h1>
+  <% if (!site.commissionsOpen) { %><p class="notice">Commissions are currently closed – you can still submit to be considered when they reopen.</p><% } %>
+  <p>Tell me about the cards you have in mind. This is not a binding order; I'll reply with availability, a quote and next steps.</p>
+  <% if (formsEnabled) { %>
+  <%- include('partials/errors') %>
+  <form method="post" action="/commissions">
+    <label>Name <input name="name" required maxlength="100" value="<%= values.name || '' %>"></label>
+    <label>Email <input type="email" name="email" required maxlength="200" value="<%= values.email || '' %>"></label>
+    <label>Other contact (Discord, Instagram, …) <input name="contactPref" maxlength="100" value="<%= values.contactPref || '' %>"></label>
+    <label>Which cards are you getting altered? <textarea name="cards" rows="4" required maxlength="2000" placeholder="One per line: card name, set, foil/non-foil"><%= values.cards || '' %></textarea></label>
+    <label>Your vision <textarea name="vision" rows="6" maxlength="4000" placeholder="Style, mood, colours, extended art, full repaint, anything that matters to you"><%= values.vision || '' %></textarea></label>
+    <label>Where are the cards?
+      <select name="cardSource">
+        <% [['own','I own them and will ship them to you'],['need','I need you to source them'],['unsure','Not sure yet']].forEach(([v, l]) => { %>
+          <option value="<%= v %>" <%= values.cardSource === v ? 'selected' : '' %>><%= l %></option>
+        <% }) %>
+      </select>
+    </label>
+    <label>Budget (optional) <input name="budget" maxlength="100" value="<%= values.budget || '' %>"></label>
+    <label>Deadline (optional) <input name="deadline" maxlength="100" value="<%= values.deadline || '' %>"></label>
+    <label>Reference links (optional) <textarea name="references" rows="3" maxlength="1000"><%= values.references || '' %></textarea></label>
+    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn" type="submit">Submit Questionnaire</button>
+  </form>
+  <% } else { %>
+    <p class="notice">The online form is not live yet (static preview). Please email <a href="mailto:<%= site.email %>"><%= site.email %></a> instead with the cards you have in mind.</p>
+  <% } %>
+</section>
+<%- include('partials/footer') %>

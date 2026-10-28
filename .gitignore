@@ -1,0 +1,4 @@
+node_modules/
+dist/
+data/submissions.jsonl
+.DS_Store
